@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>News - Blakletterpress Website Template</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div id="motto">
+				<a href="index.html" class="sitename"><img src="images/blakletterpress.png" height="24" width="142" alt="SiteName"></a>
+				<p>
+					<img src="images/header-text.png" height="14" width="218" alt="Text">
+				</p>
+			</div>
+			<div id="logo">
+				<a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+			</div>
+			<div id="searchbar">
+				<form action="#" method="post">
+					<input type="text" value="Enter search query" class="txtfield" onBlur="javascript:if(this.value==''){this.value=this.defaultValue;}" onFocus="javascript:if(this.value==this.defaultValue){this.value='';}">
+					<input type="submit" value="Search" class="btn">
+				</form>
+			</div>
+	    </div>
+		<section>
+		<div id="contents">
+			<div id="main">
+				<div class="body">
+					<h2>Đăng ký nhận thông tin</h2>
+					<p>Điền thông tin bên dưới để nhận bản tin định kì. Các trường có dấu * là bắt buộc</p>
+
+  <form action="/submit" method="POST" name="completeForm">
+
+	<fieldset> 
+		<legend> Thông tin tài khoản</legend>
+		<label for="name">Họ và tên *</label> <br>
+
+		<input type="text" id="name" name="name" required>
+		<br><br>
+
+		<label for="email">Email *</label> <br>
+		<input type="email" id="email" name="email">
+		<br><br>
+
+		<label for="password">Mật khẩu * (tối thiểu 8 kí tự)</label> <br>
+		<input type="password" id="password" name="" required minlength="8">
+		<br><br>
+
+		<label for="phone">Số điện thoại * (tối thiểu 10, bắt đầu bằng 0)</label> <br>
+		<input type="tel" id="phone" name="" required pattern="^0[0-9]{9,}$" minlength="10" maxlength="10"  >
+		<br><br>
+	</fieldset>
+    
+
+	<fieldset>
+		<legend>Thông tin cá nhân</legend>
+
+		<label for="birthdate">Ngày sinh *</label> <br>
+    	<input type="date" id="birthdate" name="birthdate" required>
+    	<br><br>
+
+		<label for="age">Độ tuổi *</label> <br>
+		<input type="number" id="age" name="age" required min="1" max="120">
+		<br><br>
+
+		<p>Giới tính *</p> <br>
+		<input type="radio" id="male" name="gender" value="male">
+		<label for="male">Male</label>
+		<input type="radio" id="female" name="gender" value="female">
+		<label for="female">Female</label>
+		<input type="radio" id="other" name="gender" value="other">
+		<label for="other">Other</label>
+		<br><br>
+	</fieldset>
+
+	<fieldset>
+		<legend>Tùy chọn thông tin</legend>
+		<p>Chủ đề quan tâm:</p>
+		<input type="checkbox" id="tintuc" name="interest" value="tintuc">
+		<label for="tintuc">Tin tức</label>
+
+		<input type="checkbox" id="blog" name="interest" value="blog">
+		<label for="blog">Blog</label>
+
+		<input type="checkbox" id="sukien" name="interest" value="sukien">
+		<label for="sukien">Sự kiện</label>
+		<br><br>
+
+		<label for="khuvuc">Khu vực</label> <br>
+		<select id="khuvuc" name="khuvuc">
+		<option value="hn">Hà Nội</option>
+		<option value="hy">Hưng Yên</option>
+		<option value="pt">Phú Thọ</option>
+		</select>
+		<br><br>
+
+		<label for="comments">Lời nhắn</label><br>
+		<textarea id="comments" name="comments" rows="4" cols="40"></textarea>
+		<br><br>
+
+		<input type="checkbox" id="agree" name="agree" value="agree">
+		<label for="agree"> Tôi đồng ý với điều khoản sử dụng</label> <br>
+	</fieldset>
+    
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+  </form>
+					<div id="pagination">
+						<a href="news.html">&lt;&lt;</a> <a href="news.html">First</a> <a href="news.html">1</a> <a href="news.html">2</a> <a href="news.html">3</a> <a href="news.html">4</a> <a href="news.html">5</a> <a href="news.html">6</a> <a href="news.html">7</a> <a href="news.html">8</a> <a href="news.html">9</a> <a href="news.html">10</a> <a href="news.html">11</a> <a href="news.html">12</a> <a href="news.html">13</a> <a href="news.html">14</a> <a href="news.html">15</a> <a href="news.html">16</a> <a href="news.html">17</a> <a href="news.html">18</a> <a href="news.html">19</a> <a href="news.html">20</a> <a href="news.html">Last</a> <a href="news.html">&gt;&gt;</a>
+					</div>
+				</div>
+			</div>
+			<div id="sidebar">
+				<div id="navigation">
+					<div>
+						<ul>
+							<li>
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+								<a href="about.html">About</a>
+							</li>
+							<li class="selected">
+								<a href="news.html">News</a>
+							</li>
+							<li>
+								<a href="blog.html">Blog</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="section">
+					<div id="connect">
+						<h2>Connect with us:</h2>
+						<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
+					</div>
+				</div>
+				<div class="section">
+					<div id="posts">
+						<h2>Placeholder</h2>
+						<ul>
+							<li>
+								<h5>Title Sample One</h5>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend ligula vel velit varius
+								</p>
+								<a href="news.html" class="more">Read more</a>
+							</li>
+							<li>
+								<h5>Title Sample One</h5>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend ligula vel velit varius
+								</p>
+								<a href="news.html" class="more">Read more</a>
+							</li>
+						</ul>
+						<a href="news.html" class="btn2">View More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<div id="footer">
+			<div>
+				<ul id="featured">
+					<li>
+						<a href="index.html" class="home"></a>
+						<p>
+							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+						</p>
+					</li>
+					<li>
+						<a href="index.html" class="bell"></a>
+						<p>
+							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+						</p>
+					</li>
+					<li>
+						<a href="index.html" class="globe"></a>
+						<p>
+							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+						</p>
+					</li>
+					<li>
+						<a href="index.html" class="pencil"></a>
+						<p>
+							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+						</p>
+					</li>
+				</ul>
+				<p id="footnote">
+					© Copyright 2011. Company name all rights reserved
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
