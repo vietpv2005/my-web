@@ -1,0 +1,442 @@
+:root {
+    --bg-color: #fafaf9;
+    --text-main: #292524;
+    --text-muted: #78716c;
+    --primary: #78350f;
+    --border-color: #e7e5e4;
+    --card-bg: #ffffff;
+    --header-bg: #ffffff;
+    --footer-bg: #1c1917;
+    --footer-text: #d6d3d1;
+}
+
+/*Định nghĩa các màu => Sau này gọi bằng var , dễ cho việc quản lý và thay đổi 
+Nếu muốn đổi sang nền sáng / tối */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #222;
+    background: #f4f1ea;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    /* ???*/
+
+}
+
+.site-header {
+    background-color: var(--header-bg);
+    position: sticky;
+    /*Gắn liền khi cuộn, cần có 1 thuộc tính để xác định vị trí, ở đây là Top : 0*/
+    top: 0;
+    z-index: 50;
+    /* Độ sâu, chọn cái nào hiển thị, giả sử khi header cuộn thì nội dung chũ hiển thị hay hader hiển thị*/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.site-header>.site-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-weight: bold;
+    color: #1c1917;
+    text-decoration: none;
+
+}
+
+.site-header>.tagline {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.125rem;
+}
+
+.site-header>.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.site-header > .main-nav a {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background-color: #f5f5f4; /* Màu nền của nút */
+    color: #292524;
+    border: 1px solid #d6d3d1;
+    border-radius: 9999px; /* Bo tròn kiểu viên thuốc (pill) */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.site-header>.main-nav a:hover {
+    color: var(--primary);
+}
+
+@media (min-width: 768px) {
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.layout {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    flex-grow: 1;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .layout {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    main {
+        grid-column: span 2 / span 2;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#gioi-thieu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+#gioi-thieu h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
+}
+
+#gioi-thieu figure {
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+#gioi-thieu img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+    display: block;
+}
+
+
+#gioi-thieu figcaption {
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+    background-color: #f5f5f4;
+
+}
+
+
+/* Giá trị cốt lõi & Đội ngũ (Grids) */
+#gia-tri,
+#doi-ngu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#gia-tri h2,
+#doi-ngu h2,
+#lien-he h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.value-list,
+.team-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+@media (min-width: 640px) {
+
+    .value-list,
+    .team-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.value-card,
+.member {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s;
+}
+
+.value-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+
+.value-card h3,
+.member h3 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.value-card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.member {
+    text-align: center;
+    padding: 1rem;
+}
+
+.member img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 9999px;
+    margin: 0 auto 1rem auto;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    display: block;
+}
+
+.member p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+
+/* Liên hệ form */
+#lien-he {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: ring 0.2s, border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(120, 53, 15, 0.2);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background-color: #111827;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
+    .contact-form button {
+        width: auto;
+    }
+}
+
+.contact-form button:hover {
+    background-color: var(--primary);
+}
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar>div:first-child {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.recent {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.recent a {
+    color: var(--text-muted);
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s;
+}
+
+.recent a:hover {
+    color: var(--primary);
+}
+
+.sidebar>div:last-child {
+    background-color: rgba(254, 243, 199, 0.5);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #fde68a;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.sidebar>div:last-child a {
+    font-weight: 600;
+    color: #111827;
+    text-decoration: underline;
+}
+
+.sidebar>div:last-child a:hover {
+    color: var(--primary);
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    margin-top: auto;
+    padding: 3rem 0;
+    border-top: 1px solid #292524;
+}
+
+.site-footer>div {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    list-style: none;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+    .footer-cols {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-cols {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.footer-cols li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-cols h3 {
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+}
+
+.footer-cols p {
+    color: #a8a29e;
+}
+
+.copyright {
+    border-top: 1px solid #292524;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #78716c;
+}
